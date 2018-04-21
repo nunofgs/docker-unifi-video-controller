@@ -1,3 +1,3 @@
-FROM supafyn/unifi-video-controller:3.8.5
+FROM supafyn/unifi-video-controller:3.9.6
 
 COPY start.sh /bin
