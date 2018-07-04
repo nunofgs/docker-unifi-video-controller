@@ -9,8 +9,11 @@ if [ ! -f /var/lib/unifi-video/system.properties ]; then
 fi
 
 # We don't want the process to daemonize because we want it to run forever
-#  as the docker container process
+# as the docker container process.
 echo "UFV_DAEMONIZE=false" > /etc/default/unifi-video
+
+# Fix an issue on our base image that doesn't create the logs directory.
+mkdir -p /var/log/unifi-video
 
 # Install and convert a let's encrypt certificate, if provided.
 if [ -n "$CERTIFICATE" ]; then
