@@ -1,3 +1,5 @@
-FROM supafyn/unifi-video-controller:3.9.7
+FROM pducharme/unifi-video-controller:3.10.13
 
-COPY start.sh /bin
+COPY start.sh /
+
+CMD ["/start.sh"]
